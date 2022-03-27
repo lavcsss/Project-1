@@ -29,12 +29,12 @@ total_count_2 = 0
 for i in "true":
     count_1 = (string_1 + string_2).count(i)
     total_count_1 += count_1
-print(total_count_1)
+# print(total_count_1)
 
 for j in "love":
     count_2 = (string_1 + string_2).count(j)
     total_count_2 += count_2
-print(total_count_2)
+# print(total_count_2)
 total_count = total_count_1 * 10 + total_count_2 
 
 print(f"Your score is{total_count}", end= " ")

@@ -1,4 +1,4 @@
-# Encryption and Decryption
+# Encryption and Decryption using unicode
 
 direction = input("Type \"encode\" for encryption or \"decode\" for decryption \n").lower()
 text = input("Enter your message \n").lower()
