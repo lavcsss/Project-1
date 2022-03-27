@@ -1,8 +1,9 @@
 # Encryption and Decryption using unicode
+"""
+I accidently introduced a bug, the symbol which replaces the "space" will 
+accidently replaces the letter with space during decryption 
+"""
 
-direction = input("Type \"encode\" for encryption or \"decode\" for decryption \n").lower()
-text = input("Enter your message \n").lower()
-shift = int(input("Enter the shift value\n"))
 """
 Encryption
 """
@@ -19,7 +20,6 @@ def encode(text, shift):
         cipher_text += chr(x)
     print(f"Encrpted message: {cipher_text}")
 
-
 def decode(cipher_text, shift):
     text = ""
     for i in cipher_text:
@@ -35,9 +35,20 @@ def decode(cipher_text, shift):
         text += chr(x)
     print(f"decrypted message: {text}")
 
-if direction == "encode":
-    encode(text=text, shift=shift)
-if direction == "decode":
-    decode(cipher_text=text, shift=shift)
+
+should_continue = True
+while should_continue:
+    direction = input("Type \"encode\" for encryption or \"decode\" for decryption \n").lower()
+    text = input("Enter your message \n").lower()
+    shift = int(input("Enter the shift value\n"))
+    shift = shift % 97                # if shift is larger than our list
+    if direction == "encode":
+        encode(text=text, shift=shift)
+    if direction == "decode":
+        decode(cipher_text=text, shift=shift)
+    result = input("Type \"yes\" for continue or \"no\" for exit.\n")
+    if result == "no":
+        should_continue = False
+        print("Good Bye")
 # else:
 #     print("Please enter the correct keyword")
