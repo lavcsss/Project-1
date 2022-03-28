@@ -31,10 +31,10 @@ while 1:
         encode(plain_text = text, shift_amount = shift)
     if direction == "decode":
         decode(cipher_text = text, shift_amount = shift)
-    chance = input("Type \"yes\" to continue or \"no\" to exit")
+    chance = input("Type \"yes\" to continue or \"no\" to exit\n")
     if chance == "no":
         exit()
     if chance == "yes":
         continue
     else:
-        print("Please type \"yes or no\"")
+        print("Please type \"yes or no\"\n")
