@@ -1,8 +1,4 @@
 # Encryption and Decryption using unicode
-"""
-I accidently introduced a bug, the symbol which replaces the "space" will 
-accidently replaces the letter with space during decryption 
-"""
 
 """
 Encryption
@@ -10,10 +6,10 @@ Encryption
 def encode(text, shift):
     cipher_text = ""
     for i in text:
-        if i == " ":
-            y = ord(i) + 65 + shift
-            cipher_text += chr(y)
-            continue
+        # if i == " ":
+        #     y = ord(i) + 65 + shift
+        #     cipher_text += chr(y)
+        #     continue
         x = ord(i) + shift
         if x == 127:
             x = 95
@@ -23,10 +19,10 @@ def encode(text, shift):
 def decode(cipher_text, shift):
     text = ""
     for i in cipher_text:
-        if i == chr(32 + 65 + shift):
-            y = ord(i) - 65 - shift
-            text += chr(y)
-            continue
+        # if i == chr(32 + 65 + shift):
+        #     y = ord(i) - 65 - shift
+        #     text += chr(y)
+        #     continue
         if i == chr(95):
             z = 127 - shift
             text += chr(z)
